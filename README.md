@@ -17,4 +17,14 @@ Each vibration sample acquired via the accelerometer from each axis has 2048 sam
 
 ![image](https://user-images.githubusercontent.com/57262710/218366052-a137b7ba-5cc5-4c28-af8c-2520781d77b1.png)
 
+As the goal of this research is to create a standalone device for real-time fault detection of rotating machines, the common classification methods can not be used because their training requires labeled data from both faulty and healthy states of the machine, which is not available in most cases. In this situation, novelty detection algorithms are the best choice. In this study, we utilized one of the most commonly used novelty detector algorithms, autoencoders. Autoencoders are feed forward fully connected artificial neural networks that can learn to reconstruct their unlabeled inputs. If an autoencoder is trained by healthy machine data, it can precisely reproduce every healthy data. However, when faulty data is fed to the autoencoder, it is not able to reconstruct it. So the mean squared error (MSE) between input and output of the autoencoder can be used as an indicator for discriminating the healthy and defective state of the machine. The algorithm flow chart can be seen in figure below.
+
+![image](https://user-images.githubusercontent.com/57262710/218366523-7fa1b645-1049-481c-bfee-9a65b709885d.png)
+
+To prove the feasibility of this technology, another experiment was conducted on the setup, and the whole previously described process, including collecting the 
+batches, teaching the network, and testing using unseen data, was done automatically by the MCU. After training the model by four batches of 100 sample healthy data in 10 distinguished pump operating points, 86 unseen healthy samples were fed to the network, and then the cavitation fault was introduced, and again 57 tests under healthy pump condition were conducted. The number of tests under cavitation conditions was 100. Figure below displays that the network has been successfully trained on the MCU and could differentiate the normal and abnormal machine conditions. 
+
+![image](https://user-images.githubusercontent.com/57262710/218366574-b52975b6-84be-4ba1-be1e-71b7dc667644.png)
+
+
 
