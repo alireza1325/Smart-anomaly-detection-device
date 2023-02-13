@@ -26,5 +26,6 @@ batches, teaching the network, and testing using unseen data, was done automatic
 
 ![image](https://user-images.githubusercontent.com/57262710/218366574-b52975b6-84be-4ba1-be1e-71b7dc667644.png)
 
+![image](https://user-images.githubusercontent.com/57262710/218367091-35557f43-35df-44a2-a84c-8dd3fae06d4e.png)
 
 
