@@ -17,6 +17,18 @@ Each vibration sample acquired via the accelerometer from each axis has 2048 sam
 
 ![image](https://user-images.githubusercontent.com/57262710/218367348-bfc3c47f-16f5-4d9b-94f0-c9750645d280.png)
 
+Image below shows the exprimental setup used to test the developed algorithm and device. The Experimental setup consists of an centrifugal electro-pump and a closed-loop circuit enabling operating the pump at different conditions.
+
+![image](https://user-images.githubusercontent.com/57262710/221373507-35364c7c-d32d-4ec9-9ce5-a339c33d8d1e.png)
+
+Data Collection has been underway for healthy conditions of the pump along with some faulty scenarios such as:
+    1-Cavitation
+    2-Impeller crack fault
+    3-Vane tip faults
+    
+![image](https://user-images.githubusercontent.com/57262710/221373571-4b8a6887-e261-433a-9260-26efaba2070a.png)
+
+
 As the goal of this research is to create a standalone device for real-time fault detection of rotating machines, the common classification methods can not be used because their training requires labeled data from both faulty and healthy states of the machine, which is not available in most cases. In this situation, novelty detection algorithms are the best choice. In this study, we utilized one of the most commonly used novelty detector algorithms, autoencoders. Autoencoders are feed forward fully connected artificial neural networks that can learn to reconstruct their unlabeled inputs. If an autoencoder is trained by healthy machine data, it can precisely reproduce every healthy data. However, when faulty data is fed to the autoencoder, it is not able to reconstruct it. So the mean squared error (MSE) between input and output of the autoencoder can be used as an indicator for discriminating the healthy and defective state of the machine. The algorithm flow chart can be seen in figure below.
 
 ![image](https://user-images.githubusercontent.com/57262710/218367410-004ddf2e-0b40-433a-9bfc-044ecd17fd44.png)
